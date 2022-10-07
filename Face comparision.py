@@ -99,7 +99,7 @@ if __name__ == '__main__':
             beauty_score_and_emotion_recognition
         }
 
-        # Pair 1
+        # Pair 1kk
         image1 = 'https://i.postimg.cc/FRRvV32k/img44.jpg'
         image2 = 'https://i.postimg.cc/DzYvDxQP/img45.jpg'
         face_comparing(app_, image1, image2)
