@@ -1,7 +1,10 @@
 import cv2
 import numpy as np
+import os
+
 
 path = 'img44.jpg'
+path2 =
 
 def empty(a):
     pass
@@ -24,6 +27,10 @@ for hue in range(0, 179):
             cv2.imshow("Result", imgResult)
             cv2.waitKey(1)
             print(hue, sat, val)
+        cv2.imwrite(os.path.join(path, 'waka.tif'), )
+        cv2.waitKey(0)
+
+
 
 
 
