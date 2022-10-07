@@ -1,7 +1,6 @@
 # Python program for face
 # comparison
-'''
-import cv2
+
 from __future__ import print_function, unicode_literals
 from facepplib import FacePP, exceptions
 
@@ -59,17 +58,6 @@ if __name__ == '__main__':
             beauty_score_and_emotion_recognition
         }
 
-    img = cv2.imread('img44.jpeg')
-    img1 = cv2.imread('img45.jpeg')
-    gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    gray_img = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
-    haar_cascade = cv2.CascadeClassifier('Haarcascade_frontalface_default.xml')
-    faces_rect = haar_cascade.detectMultiScale(gray_img, 1.1, 9)
-    for (x, y, w, h) in faces_rect:
-        cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
-    cv2.imshow('Detected faces', img)
-    cv2.imshow('Detected faces', img1)
-    cv2.waitKey(0)
 
     # Pair 1kk
         image1 = 'https://i.postimg.cc/FRRvV32k/img44.jpg'
@@ -88,26 +76,3 @@ if __name__ == '__main__':
 
     except exceptions.BaseFacePPError as e:
         print('Error:', e)
-'''
-# Importing OpenCV package
-import cv2
-
-# Reading the image
-img = cv2.imread('images.jpg')
-
-# Converting image to grayscale
-gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
-# Loading the required haar-cascade xml classifier file
-haar_cascade = cv2.CascadeClassifier('Haarcascade_frontalface_default.xml')
-
-# Applying the face detection method on the grayscale image
-faces_rect = haar_cascade.detectMultiScale(gray_img, 1.1, 9)
-
-# Iterating through rectangles of detected faces
-for (x, y, w, h) in faces_rect:
-	cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
-
-cv2.imshow('Detected faces', img)
-
-cv2.waitKey(0)
