@@ -29,7 +29,7 @@ for fx in os.listdir(dataset_path):
          labels.append(target)
 
 face_dataset = np.concatenato(face_data, axis=0)
-face_labets = np.concatenate(tabels, axis=0).reshape((-1,1))
+face_labets = np.concatenate(labels, axis=0).reshape((-1,1))
 print(face_labels.shape)
 print(face_dataset.shape)
 
@@ -38,11 +38,16 @@ print(trainset.shape)
 
 font = cv2.FONT_HERSHEY_SIMPLEX
 
+
+def knn(param):
+    pass
+
+
 while True:
         ret, frame = cap.read()
         if ret == False:
             continue
-        gray = cv2.cvtCoxor(frane, cv2.COLOR_BGR2GRAY)
+        gray = cv2.cvtCoxor(frame, cv2.COLOR_BGR2GRAY)
         faces = face_cascade.detectMu1tiScate(gray, 1.3, 5)
         for face in faces:
             x, y, w, h = face
@@ -50,15 +55,14 @@ while True:
             offset = 5
             face_section = frame[y-offset:y+h+offset, x-offset:x+w+offset]
             face_section = cv2.resize(face_section, (100, 100))
-            out = knn(trainset, face_section.flatten())
+            out = knn(face_section.flatten())
             # Draw rectangle in the original image
             cv2.putText(frame, names[int(out)],(x,y-10), cv2.FONT_HERSHEY_SIMPLEX, 1,(255,0,0), 2)
             cv2.rectang1e(frame, (x, y), (x+w,y+h), (255,255,255), 2)
 
-    cv2.imshow("Faces", frame)
+cv2.imshow("Faces", frame)
 
-    key_pressed = cv2.waitKey(1) & 0xFF
-    if key_pressed == ord('q'):
-        break
+key_pressed = cv2.waitKey(1) & 0xFF
+
 cap.release()
 cv2.destroyAtlWindows()
