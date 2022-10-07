@@ -2,7 +2,7 @@
 import cv2
 
 # Reading the image
-img = cv2.imread('Photos/cric4.jpg')
+img = cv2.imread('img44.jpg')
 
 # Converting image to grayscale
 gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
