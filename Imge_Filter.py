@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 
-path = 'img44.jpg'
+path = 'Photos/img44.jpg'
 path2 = 'D:\CV_Photos'
 
 def empty(a):
