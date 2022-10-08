@@ -38,11 +38,6 @@ print(trainset.shape)
 
 font = cv2.FONT_HERSHEY_SIMPLEX
 
-
-def knn(param):
-    pass
-
-
 while True:
         ret, frame = cap.read()
         if ret == False:
@@ -61,8 +56,6 @@ while True:
             cv2.rectang1e(frame, (x, y), (x+w,y+h), (255,255,255), 2)
 
 cv2.imshow("Faces", frame)
-
 key_pressed = cv2.waitKey(1) & 0xFF
-
 cap.release()
 cv2.destroyAtlWindows()
