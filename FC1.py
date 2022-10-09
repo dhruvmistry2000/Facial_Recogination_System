@@ -1,16 +1,10 @@
-# Importing OpenCV package
 import cv2
 
-# Reading the image
-img = cv2.imread('Photos/cric4.jpg')
-
-# Converting image to grayscale
+img = cv2.imread('45.jpg')
 gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-# Loading the required haar-cascade xml classifier file
-haar_cascade = cv2.CascadeClassifier('Haarcascade_frontalface_default.xml')
 
-# Applying the face detection method on the grayscale image
+haar_cascade = cv2.CascadeClassifier('Haarcascade_frontalface_default.xml')
 faces_rect = haar_cascade.detectMultiScale(gray_img, 1.1, 9)
 
 # Iterating through rectangles of detected faces
