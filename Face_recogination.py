@@ -1,8 +1,5 @@
-'''# face recognition
 import cv2
-import numpy as np
-import sys
-import time
+
 
 faceCascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 cap = cv2.VideoCapture(0)
@@ -22,6 +19,6 @@ while True:
 cv2.imshow("Video", imggray)
 cap.release()
 cv2.destroyAllWindows()
-'''
+
 
 
