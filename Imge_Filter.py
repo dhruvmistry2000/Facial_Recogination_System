@@ -21,9 +21,9 @@ for hue in range(0, 179):
             lower = np.array([hue, sat, val])
             upper = np.array([179, 255, 255])
             mask = cv2.inRange(imgHSV, lower, upper)
-            imgResult = cv2.bitwise_and(img, img, mask=mask)
+            black_white = cv2.bitwise_and(img, img, mask=mask)
             print(hue, sat, val)
-            cv2.imwrite(os.path.join(path2, 'mask_'+str(i)+'.jpg'), mask)
-            cv2.imwrite(os.path.join(path2, 'black-white_'+str(i)+'.jpg'), imgResult)
+            cv2.imwrite(os.path.join(path2, 'mask_'+str(i)+'.jpg'), black_white)
+            cv2.imwrite(os.path.join(path2, 'black-white_'+str(i)+'.jpg'), mask)
             i=i+1
             cv2.waitKey(0)
